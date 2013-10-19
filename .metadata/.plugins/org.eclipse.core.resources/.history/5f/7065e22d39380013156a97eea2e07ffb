@@ -1,0 +1,32 @@
+/**
+ * 
+ */
+package csc7327.utilities;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+/**
+ * @author luongnv89
+ *
+ */
+public class Utilities {
+	SimpleDateFormat formatter = new SimpleDateFormat("EEEE MMM dd HH:mm:ss +x yyyy");
+	
+	public static Date getCityTime(String utcTimeStampString, int utcTimeOffset){
+		Date utcTimeStamp = convertToDate(utcTimeStampString);
+		
+	}
+
+	private static Date convertToDate(String utcTimeStampString) {
+		try {
+			Date date = formatter.parse(utcTimeStampString);
+			System.out.println(date);
+			System.out.println(formatter.format(date));
+	 
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+	};
+}

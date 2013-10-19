@@ -1,0 +1,64 @@
+/**
+ * 
+ */
+package csc7327.tests;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import csc7327.objects.CheckInTime;
+import csc7327.objects.GPSCoordinate;
+import csc7327.objects.UserInfor;
+import csc7327.objects.Venue;
+
+/**
+ * @author luongnv89
+ *
+ */
+public class CheckInTest {
+	UserInfor user;
+	Venue venue;
+	GPSCoordinate gps;
+	CheckInTime checkInTime;
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	/**
+	 * Test method for {@link csc7327.objects.CheckIn#getUser()}.
+	 */
+	@Test
+	public void testGetUser() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link csc7327.objects.CheckIn#getVenue()}.
+	 */
+	@Test
+	public void testGetVenue() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link csc7327.objects.CheckIn#getGpsCoordinates()}.
+	 */
+	@Test
+	public void testGetGpsCoordinates() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link csc7327.objects.CheckIn#getCheckInTime()}.
+	 */
+	@Test
+	public void testGetCheckInTime() {
+		fail("Not yet implemented");
+	}
+
+}

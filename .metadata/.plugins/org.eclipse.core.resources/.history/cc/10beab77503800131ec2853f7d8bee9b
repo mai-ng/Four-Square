@@ -1,0 +1,42 @@
+/**
+ * 
+ */
+package csc7327.tests;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import csc7327.objects.DataSet;
+
+/**
+ * @author luongnv89
+ *
+ */
+public class DataSetTest {
+	DataSet tokyoDataSet;
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	/**
+	 * Test method for {@link csc7327.objects.DataSet#getCityName()}.
+	 */
+	@Test
+	public void testGetCityName() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link csc7327.objects.DataSet#getCheckInCollections()}.
+	 */
+	@Test
+	public void testGetCheckInCollections() {
+		fail("Not yet implemented");
+	}
+
+}

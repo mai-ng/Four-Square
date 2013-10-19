@@ -1,0 +1,13 @@
+/**
+ * 
+ */
+package csc7327.objects;
+
+/**
+ * The {@link CheckIn} class present a checkin
+ * @author luongnv89
+ *
+ */
+public class CheckIn {
+
+}

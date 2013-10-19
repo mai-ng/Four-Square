@@ -1,0 +1,40 @@
+/**
+ * 
+ */
+package csc7327.analysis;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * @author luongnv89
+ *
+ */
+public class DataAnalyzerTest {
+
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	/**
+	 * Test method for {@link csc7327.analysis.DataAnalyzer#getCityName()}.
+	 */
+	@Test
+	public void testGetCityName() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link csc7327.analysis.DataAnalyzer#analyzer()}.
+	 */
+	@Test
+	public void testAnalyzer() {
+		fail("Not yet implemented");
+	}
+
+}

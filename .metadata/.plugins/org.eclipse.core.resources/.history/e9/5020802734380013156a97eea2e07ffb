@@ -1,0 +1,29 @@
+/**
+ * 
+ */
+package csc7327.objects;
+
+/**
+ * @author luongnv89
+ *
+ */
+public class UserInfor {
+	/**
+	 * The id of user
+	 */
+	String userID;
+	/**
+	 * The number of accounts which user is following at the moment
+	 */
+	int followingCount;
+	/**
+	 * The number of accounts which follow user at the moment
+	 */
+	int followerCount;
+	/**
+	 * The gender of user: MALE or FEMALE
+	 */
+	Gender gender;
+	
+	
+}

@@ -1,0 +1,42 @@
+/**
+ * 
+ */
+package csc7327.objects;
+
+import java.util.ArrayList;
+
+import csc7327.enums.DayInWeek;
+import csc7327.enums.TimeInDay;
+
+/**
+ * @author luongnv89
+ *
+ */
+public class DataTimeSlot {
+	TimeInDay timeInDay;
+	DayInWeek dayInWeek;
+	
+	ArrayList<CheckIn> listCheckIns;
+
+	/**
+	 * @param timeInDay
+	 * @param dayInWeek
+	 */
+	public DataTimeSlot(TimeInDay timeInDay, DayInWeek dayInWeek) {
+		this.timeInDay = timeInDay;
+		this.dayInWeek = dayInWeek;
+		this.listCheckIns = new ArrayList<CheckIn>();
+	}
+	
+	public void addACheckIn(CheckIn checkin){
+		listCheckIns.add(checkin);
+	}
+	
+	public void generateVenueCategoryTags(){
+		
+	}
+	
+	public void getGeographical(){
+		
+	}
+}

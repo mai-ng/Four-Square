@@ -1,0 +1,68 @@
+/**
+ * 
+ */
+package csc7327.objects;
+
+import csc7323.specifications.HasInvariant;
+
+/**
+ * The {@link UserInfor} class represent the information of user on the social network
+ * @author luongnv89
+ *
+ */
+public class UserInfor implements HasInvariant{
+	/**
+	 * The id of user
+	 */
+	String userID;
+	/**
+	 * The number of accounts which user is following at the moment
+	 */
+	int followingCount;
+	/**
+	 * The number of accounts which follow user at the moment
+	 */
+	int followerCount;
+	/**
+	 * The gender of user: MALE or FEMALE
+	 */
+	Gender gender;
+	/**
+	 * @param userID
+	 * @param followingCount
+	 * @param followerCount
+	 * @param gender
+	 */
+	public UserInfor(String userID, int followingCount, int followerCount,
+			Gender gender) {
+		this.userID = userID;
+		this.followingCount = followingCount;
+		this.followerCount = followerCount;
+		this.gender = gender;
+	}
+	/**
+	 * @return the userID
+	 */
+	public String getUserID() {
+		return userID;
+	}
+	/**
+	 * @return the followingCount
+	 */
+	public int getFollowingCount() {
+		return followingCount;
+	}
+	/**
+	 * @return the followerCount
+	 */
+	public int getFollowerCount() {
+		return followerCount;
+	}
+	/**
+	 * @return the gender
+	 */
+	public Gender getGender() {
+		return gender;
+	}
+	
+}

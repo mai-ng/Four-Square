@@ -1,0 +1,42 @@
+/**
+ * 
+ */
+package csc7327.objects;
+
+/**
+ * The {@link CheckIn} class present a checkin
+ * 
+ * @author luongnv89
+ * 
+ */
+public class CheckIn {
+	/**
+	 * User of checkin
+	 */
+	UserInfor user;
+	/**
+	 * The venue of checkin
+	 */
+	Venue venue;
+	/**
+	 * The gps coordinates of checkin
+	 */
+	GPSCoordinate gpsCoordinates;
+	/**
+	 * The time of checkin
+	 */
+	CheckInTime checkInTime;
+
+	/**
+	 * Constructor a checkin by input string
+	 */
+	public CheckIn(String checkInString) {
+		String[] array = checkInString.split("\t");
+		user = new UserInfor(array[0], Integer.parseInt(array[1]),
+				Integer.parseInt(array[2]),
+				array[3].equals("male") ? Gender.MALE : Gender.FEMALE);
+		venue = new Venue(array[4], array[5]);
+		gpsCoordinates = new GPSCoordinate(Float.parseFloat(array[6]), Float.parseFloat(array[7]));
+	}
+
+}

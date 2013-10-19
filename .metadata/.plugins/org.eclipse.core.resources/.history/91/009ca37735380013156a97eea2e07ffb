@@ -1,0 +1,18 @@
+/**
+ * 
+ */
+package csc7327.objects;
+
+import java.util.Date;
+
+/**
+ * The {@link CheckInTime} present the time of checkin
+ * @author luongnv89
+ *
+ */
+public class CheckInTime {
+	int utcTimeOffset;
+	Date utcTimeStamp;
+	
+	
+}

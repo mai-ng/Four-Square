@@ -1,0 +1,31 @@
+/**
+ * 
+ */
+package csc7327.objects;
+
+/**
+ * The {@link CheckIn} class present a checkin
+ * @author luongnv89
+ *
+ */
+public class CheckIn {
+	/**
+	 * User of checkin
+	 */
+	UserInfor user;
+	/**
+	 * The venue of checkin
+	 */
+	Venue venue;
+	/**
+	 * The gps coordinates of checkin
+	 */
+	GPSCoordinate gpsCoordinates;
+	/**
+	 * The time of checkin
+	 */
+	CheckInTime checkInTime;
+	
+	
+	
+}

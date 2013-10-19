@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="DataAnalyzerTest" project="CSC7327" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="csc7327.tests.DataAnalyzerTest" time="0.125">
+    <testcase name="testAnalyzer" classname="csc7327.tests.DataAnalyzerTest" time="0.1"/>
+    <testcase name="testGetCityName" classname="csc7327.tests.DataAnalyzerTest" time="0.025"/>
+  </testsuite>
+</testrun>

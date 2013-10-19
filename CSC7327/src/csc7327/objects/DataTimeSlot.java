@@ -33,9 +33,9 @@ public class DataTimeSlot {
 		this.timeInDay = timeInDay;
 		this.dayInWeek = dayInWeek;
 		this.listCheckIns = new ArrayList<CheckIn>();
-		this.file_venue = "analysis/" + cityName + "_venueCategoryTag" + "_"
+		this.file_venue = "analysis-tokyo/" + cityName + "_venueCategoryTag" + "_"
 				+ timeInDay + "_" + dayInWeek + ".txt";
-		this.file_geographic = "analysis/" + cityName + "_geographical" + "_"
+		this.file_geographic = "analysis-tokyo/" + cityName + "_geographical" + "_"
 				+ timeInDay + "_" + dayInWeek + ".txt";
 		try {
 			venue_file = new FileWriter(file_venue, true);

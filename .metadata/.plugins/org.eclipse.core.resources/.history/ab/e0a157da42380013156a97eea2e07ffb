@@ -1,0 +1,47 @@
+/**
+ * 
+ */
+package csc7327.objects;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+
+/**
+ * The {@link CheckInTime} present the time of checkin
+ * @author luongnv89
+ *
+ */
+public class CheckInTime {
+	private DateTimeFormatter formatter = DateTimeFormat.forPattern("EEEE MMM dd HH:mm:ss yyyy");
+	/**
+	 * UTC time offset
+	 */
+	int utcTimeOffset;
+	/**
+	 * UTC time stamp
+	 */
+	DateTime cityTime;
+	/**
+	 * @param utcTimeOffset
+	 * @param utcTimeStamp
+	 */
+	public CheckInTime(int utcTimeOffset, String utcTimeStamp) {
+		this.utcTimeOffset = utcTimeOffset;
+		this.cityTime = getCityTime(utcTimeStamp);
+	}
+	/**
+	 * @return the utcTimeOffset
+	 */
+	public int getUtcTimeOffset() {
+		return utcTimeOffset;
+	}
+	
+	public DateTime getCityTime(String utcTimeStampString){
+		
+	}
+}

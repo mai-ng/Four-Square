@@ -1,0 +1,40 @@
+/**
+ * 
+ */
+package csc7327.tests;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * @author luongnv89
+ *
+ */
+public class GPSCoordinateTest {
+
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	/**
+	 * Test method for {@link csc7327.objects.GPSCoordinate#getLatitude()}.
+	 */
+	@Test
+	public void testGetLatitude() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link csc7327.objects.GPSCoordinate#getLongitude()}.
+	 */
+	@Test
+	public void testGetLongitude() {
+		fail("Not yet implemented");
+	}
+
+}

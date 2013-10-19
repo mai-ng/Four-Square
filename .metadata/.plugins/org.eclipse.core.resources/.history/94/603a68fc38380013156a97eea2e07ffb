@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+package csc7327.utilities;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+/**
+ * @author luongnv89
+ *
+ */
+public class Utilities {
+	SimpleDateFormat formatter = new SimpleDateFormat("EEEE MMM dd HH:mm:ss +x yyyy");
+	
+	public static Date getCityTime(String utcTimeStamp, int utcTimeOffset){
+		Date utcTimeStamp = convertToDate(utcTimeStamp);
+		
+	};
+}

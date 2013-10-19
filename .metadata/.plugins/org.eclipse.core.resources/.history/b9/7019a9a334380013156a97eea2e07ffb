@@ -1,0 +1,13 @@
+/**
+ * 
+ */
+package csc7327.objects;
+
+/**
+ * The {@link Venue} represent the information of venue
+ * @author luongnv89
+ *
+ */
+public class Venue {
+
+}

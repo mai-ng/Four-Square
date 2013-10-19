@@ -1,0 +1,76 @@
+/**
+ * 
+ */
+package csc7327.objects;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.util.ArrayList;
+
+import csc7327.enums.DayInWeek;
+import csc7327.enums.TimeInDay;
+
+/**
+ * @author luongnv89
+ *
+ */
+public class DataTimeSlot {
+	TimeInDay timeInDay;
+	DayInWeek dayInWeek;
+	
+	ArrayList<CheckIn> listCheckIns;
+
+	/**
+	 * @param timeInDay
+	 * @param dayInWeek
+	 */
+	public DataTimeSlot(TimeInDay timeInDay, DayInWeek dayInWeek) {
+		this.timeInDay = timeInDay;
+		this.dayInWeek = dayInWeek;
+		this.listCheckIns = new ArrayList<CheckIn>();
+	}
+	
+	public void addACheckIn(CheckIn checkin){
+		listCheckIns.add(checkin);
+	}
+	
+	public void analyze(String fileName){
+		String file_venue = fileName+"_venueCategoryTag"+"_"+timeInDay+"_"+dayInWeek+".txt";
+		String file_geographic = fileName+"_geographical"+"_"+timeInDay+"_"+dayInWeek+".txt"; 
+		
+		BufferedWriter write1 = null;
+		BufferedWriter write2 = null;
+		try {
+			write1 = new BufferedWriter(new FileWriter(file_venue, true));
+			write2 = new BufferedWriter(new FileWriter(file_geographic, true));
+			for(int i=0;i<listCheckIns.size();i++){
+				write1.write(listCheckIns.get(i).getVenue().getVenueCategory());
+				write2.write(listCheckIns.get(i).getGpsCoordinates().toString());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally{
+			write1.close();
+			write2.close();
+		}
+		
+	}
+	
+	
+	/**
+	 * @return the timeInDay
+	 */
+	public TimeInDay getTimeInDay() {
+		return timeInDay;
+	}
+
+	/**
+	 * @return the dayInWeek
+	 */
+	public DayInWeek getDayInWeek() {
+		return dayInWeek;
+	}
+	
+	
+}

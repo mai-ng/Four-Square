@@ -1,0 +1,16 @@
+/**
+ * 
+ */
+package csc7327.analysis;
+
+import csc7327.objects.DataSet;
+
+/**
+ * @author luongnv89
+ *
+ */
+public class DataAnalysis {
+	DataSet dataset;
+	
+	
+}

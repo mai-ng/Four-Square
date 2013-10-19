@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package csc7327.objects;
+
+/**
+ * @author luongnv89
+ *
+ */
+public enum TimeInDay {
+MORNING,AFTERNOON,NIGHT
+}

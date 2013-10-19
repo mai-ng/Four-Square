@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="csc7327.objects.UserInfor"/>
+<fullyQualifiedTypeName name="csc7327.objects.Venue"/>
+<fullyQualifiedTypeName name="csc7327.objects.GPSCoordinate"/>
+<fullyQualifiedTypeName name="csc7327.objects.CheckIn"/>
+<fullyQualifiedTypeName name="csc7327.objects.CheckInTime"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="csc7327.tests.UtilitiesTest"/>
+<fullyQualifiedTypeName name="csc7327.utilities.Utilities"/>
+<fullyQualifiedTypeName name="java.util.TimeZone"/>
+<fullyQualifiedTypeName name="org.joda.time.format.DateTimeFormatter"/>
+<fullyQualifiedTypeName name="org.joda.time.format.DateTimeFormat"/>
+<fullyQualifiedTypeName name="org.joda.time.DateTime"/>
+</qualifiedTypeNameHistroy>

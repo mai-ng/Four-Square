@@ -1,0 +1,48 @@
+/**
+ * 
+ */
+package csc7327.tests;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * @author luongnv89
+ *
+ */
+public class VenueTest {
+
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	/**
+	 * Test method for {@link csc7327.objects.Venue#Venue(java.lang.String, java.lang.String)}.
+	 */
+	@Test
+	public void testVenue() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link csc7327.objects.Venue#getVenueID()}.
+	 */
+	@Test
+	public void testGetVenueID() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link csc7327.objects.Venue#getVenueCategory()}.
+	 */
+	@Test
+	public void testGetVenueCategory() {
+		fail("Not yet implemented");
+	}
+
+}

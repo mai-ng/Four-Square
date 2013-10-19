@@ -1,0 +1,54 @@
+/**
+ * 
+ */
+package csc7327.tests;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import csc7327.analysis.DataSet;
+
+/**
+ * @author luongnv89
+ * 
+ */
+public class DataSetTest {
+	DataSet tokyoDataSet;
+	String cityName = "Tokyo";
+	String dataURL = "data/tokyo_test.txt";
+
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@Before
+	public void setUp() throws Exception {
+		tokyoDataSet = new DataSet(cityName, dataURL);
+	}
+
+	/**
+	 * Test method for {@link csc7327.analysis.DataSet#getCityName()}.
+	 */
+	@Test
+	public void testGetCityName() {
+		assertTrue(tokyoDataSet.getCityName().equals("Tokyo"));
+	}
+
+	/**
+	 * Test method for {@link csc7327.analysis.DataSet#getCheckInCollections()}.
+	 */
+	@Test
+	public void testGetCheckInCollections() {
+		assertFalse(tokyoDataSet.getCheckInCollections().isEmpty());
+	}
+
+	/**
+	 * Test method for {@link csc7327.analysis.DataSet#toString()}.
+	 */
+	@Test
+	public void testToString() {
+		System.out.println(tokyoDataSet.toString());
+	}
+
+}

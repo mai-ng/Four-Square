@@ -1,0 +1,40 @@
+/**
+ * 
+ */
+package csc7327.tests;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * @author luongnv89
+ *
+ */
+public class CheckInTimeTest {
+
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	/**
+	 * Test method for {@link csc7327.objects.CheckInTime#getCityTime(java.lang.String)}.
+	 */
+	@Test
+	public void testGetCityTime() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link csc7327.objects.CheckInTime#invariant()}.
+	 */
+	@Test
+	public void testInvariant() {
+		fail("Not yet implemented");
+	}
+
+}

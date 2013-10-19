@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package csc7323.specifications;
+
+/**
+ * @author luongnv89
+ *
+ */
+public interface HasInvariant {
+	public boolean invariant();
+}	

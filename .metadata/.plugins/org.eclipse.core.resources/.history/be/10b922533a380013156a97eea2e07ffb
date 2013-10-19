@@ -1,0 +1,40 @@
+/**
+ * 
+ */
+package csc7327.tests;
+
+import static org.junit.Assert.*;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.junit.Test;
+
+import csc7327.utilities.Utilities;
+
+/**
+ * @author luongnv89
+ *
+ */
+public class UtilitiesTest {
+
+	/**
+	 * Test for {@link Utilities#convertToDate(String)}
+	 */
+	@Test
+	public void testConvertToDate() {
+		SimpleDateFormat formatter = new SimpleDateFormat("EEEE MMM dd HH:mm:ss yyyy");
+		String utcTimeStampString = "Tue Apr 03 18:17:18 2012";
+		String utcTimeStampString2 = "Tue Apr 03 23:17:18 2012";
+		try {
+			Date date = formatter.parse(utcTimeStampString);
+			System.out.println(date);
+			System.out.println(formatter.format(date));
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

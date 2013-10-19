@@ -1,0 +1,60 @@
+/**
+ * 
+ */
+package csc7327.objects;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+/**
+ * The {@link CheckInTime} present the time of checkin
+ * @author luongnv89
+ *
+ */
+public class CheckInTime {
+	SimpleDateFormat formatter = new SimpleDateFormat("EEEE MMM dd HH:mm:ss +x yyyy");
+	
+	/**
+	 * UTC time offset
+	 */
+	int utcTimeOffset;
+	/**
+	 * UTC time stamp
+	 */
+	Date utcTimeStamp;
+	/**
+	 * @param utcTimeOffset
+	 * @param utcTimeStamp
+	 */
+	public CheckInTime(int utcTimeOffset, Date utcTimeStamp) {
+		this.utcTimeOffset = utcTimeOffset;
+		this.utcTimeStamp = utcTimeStamp;
+	}
+	/**
+	 * @return the utcTimeOffset
+	 */
+	public int getUtcTimeOffset() {
+		return utcTimeOffset;
+	}
+	/**
+	 * @return the utcTimeStamp
+	 */
+	public Date getUtcTimeStamp() {
+		return utcTimeStamp;
+	}
+	
+	public Date getCityTime(){
+		String dateInString = "Friday, Jun 7, 2013 12:10:56 PM";		
+	 
+		try {
+	 
+			Date date = formatter.parse(dateInString);
+			System.out.println(date);
+			System.out.println(formatter.format(date));
+	 
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+	}
+}

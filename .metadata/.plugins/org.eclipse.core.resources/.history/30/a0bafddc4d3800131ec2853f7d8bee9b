@@ -1,0 +1,25 @@
+/**
+ * 
+ */
+package csc7327.objects;
+
+import java.util.ArrayList;
+
+/**
+ * @author luongnv89
+ *
+ */
+public class DataSet {
+	/**
+	 * The name of the city where the data is collected
+	 */
+	String cityName;
+	/**
+	 * The url to get the data source file
+	 */
+	String dataURL;
+	/**
+	 * List all the checkins of the city
+	 */
+	ArrayList<CheckIn> checkInCollections;
+}

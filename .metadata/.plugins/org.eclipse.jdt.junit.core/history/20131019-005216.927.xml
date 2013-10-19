@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="GPSCoordinateTest" project="CSC7327" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="csc7327.tests.GPSCoordinateTest" time="0.0">
+    <testcase name="testGetLatitude" classname="csc7327.tests.GPSCoordinateTest" time="0.0"/>
+    <testcase name="testGetLongitude" classname="csc7327.tests.GPSCoordinateTest" time="0.0"/>
+  </testsuite>
+</testrun>

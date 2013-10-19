@@ -1,0 +1,64 @@
+/**
+ * 
+ */
+package csc7327.tests;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * @author luongnv89
+ *
+ */
+public class UserInforTest {
+
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	/**
+	 * Test method for {@link csc7327.objects.UserInfor#getUserID()}.
+	 */
+	@Test
+	public void testGetUserID() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link csc7327.objects.UserInfor#getFollowingCount()}.
+	 */
+	@Test
+	public void testGetFollowingCount() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link csc7327.objects.UserInfor#getFollowerCount()}.
+	 */
+	@Test
+	public void testGetFollowerCount() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link csc7327.objects.UserInfor#getGender()}.
+	 */
+	@Test
+	public void testGetGender() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link csc7327.objects.UserInfor#invariant()}.
+	 */
+	@Test
+	public void testInvariant() {
+		fail("Not yet implemented");
+	}
+
+}

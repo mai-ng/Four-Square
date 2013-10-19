@@ -1,0 +1,17 @@
+/**
+ * 
+ */
+package csc7327.objects;
+
+import csc7327.enums.DayInWeek;
+import csc7327.enums.TimeInDay;
+
+/**
+ * @author luongnv89
+ *
+ */
+public class DataTimeSlot {
+	TimeInDay timeInDay;
+	DayInWeek dayInWeek;
+	
+}

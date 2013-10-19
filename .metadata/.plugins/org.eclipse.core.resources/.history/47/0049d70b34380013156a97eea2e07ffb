@@ -1,0 +1,15 @@
+/**
+ * 
+ */
+package csc7327.objects;
+
+/**
+ * @author luongnv89
+ *
+ */
+public class UserInfor {
+	String userID;
+	int followingCount;
+	int followerCount;
+	Gender gender;
+}
