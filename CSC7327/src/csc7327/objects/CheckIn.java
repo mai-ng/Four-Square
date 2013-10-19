@@ -3,6 +3,9 @@
  */
 package csc7327.objects;
 
+import csc7327.enums.Gender;
+
+
 /**
  * The {@link CheckIn} class present a checkin
  * 

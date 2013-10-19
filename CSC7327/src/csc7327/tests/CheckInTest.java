@@ -8,10 +8,10 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import csc7327.enums.Gender;
 import csc7327.objects.CheckIn;
 import csc7327.objects.CheckInTime;
 import csc7327.objects.GPSCoordinate;
-import csc7327.objects.Gender;
 import csc7327.objects.UserInfor;
 import csc7327.objects.Venue;
 

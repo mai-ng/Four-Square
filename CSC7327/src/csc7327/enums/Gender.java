@@ -1,7 +1,7 @@
 /**
  * 
  */
-package csc7327.objects;
+package csc7327.enums;
 
 /**
  * @author luongnv89

@@ -3,6 +3,7 @@
  */
 package csc7327.objects;
 
+import csc7327.enums.Gender;
 import csc7327.specifications.HasInvariant;
 
 /**

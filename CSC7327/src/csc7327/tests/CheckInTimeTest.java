@@ -23,7 +23,7 @@ public class CheckInTimeTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
-		checkInTimeOK = new CheckInTime(540, "Tue Apr 03 18:17:18 +0000 2012");
+		checkInTimeOK = new CheckInTime(540, "Sun Apr 01 18:17:18 +0000 2012");
 		checkInTimeKO1 = new CheckInTime(940, "Tue Apr 03 18:17:18 +0000 2012");
 		checkInTimeKO2 = new CheckInTime(540, "Tue Apr 03 18:17:18 +0000 2014");
 	}
@@ -34,6 +34,7 @@ public class CheckInTimeTest {
 	@Test
 	public void testGetCityTime() {
 		System.out.println(checkInTimeOK.getCityTime());
+		System.out.println("Day In Week: " + checkInTimeOK.getCityTime().getDayOfWeek());
 	}
 
 	/**

@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import csc7327.objects.Gender;
+import csc7327.enums.Gender;
 import csc7327.objects.UserInfor;
 
 /**
