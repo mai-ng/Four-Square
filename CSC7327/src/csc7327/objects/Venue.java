@@ -38,4 +38,10 @@ public class Venue {
 		return venueCategory;
 	}
 	
+	public boolean equals(Venue other) {
+		if(!(other instanceof Venue)||other == null) return false;
+		return this.venueID.equals(other.getVenueID()) && this.venueCategory.equals(other.getVenueCategory());
+	}
+	
+	
 }

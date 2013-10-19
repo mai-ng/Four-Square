@@ -7,13 +7,15 @@ import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
+import csc7327.specifications.HasInvariant;
+
 /**
  * The {@link CheckInTime} present the time of checkin
  * @author luongnv89
  *
  */
-public class CheckInTime {
-	private final DateTimeFormatter formatter = DateTimeFormat.forPattern("EEEE MMM dd HH:mm:ss yyyy");
+public class CheckInTime implements HasInvariant{
+	private final DateTimeFormatter formatter = DateTimeFormat.forPattern("EEEE MMM dd HH:mm:ss Z yyyy");
 	/**
 	 * UTC time offset
 	 */
@@ -28,7 +30,7 @@ public class CheckInTime {
 	 */
 	public CheckInTime(int utcTimeOffset, String utcTimeStamp) {
 		this.utcTimeOffset = utcTimeOffset;
-		this.cityTime = getCityTime(utcTimeStamp);
+		this.cityTime = convertToCityTime(utcTimeStamp);
 	}
 	
 	/**
@@ -36,7 +38,29 @@ public class CheckInTime {
 	 * @param utcTimeStampString the String represent the utc time of checkin
 	 * @return the real time of checkin in the city
 	 */
-	public DateTime getCityTime(String utcTimeStampString){
+	private DateTime convertToCityTime(String utcTimeStampString){
 		return formatter.parseDateTime(utcTimeStampString).minusMinutes(utcTimeOffset);
 	}
+	
+
+	/**
+	 * @return the cityTime
+	 */
+	public DateTime getCityTime() {
+		return cityTime;
+	}
+
+	@Override
+	public boolean invariant() {
+		if(utcTimeOffset%15!=0 || utcTimeOffset<-720 ||utcTimeOffset>840){
+			System.out.println("The time offset is invalid!");
+			return false;
+		}
+		if(cityTime.getYear()<2000||cityTime.getYear()>DateTime.now().getYear()){
+			System.out.println("The time checkin is invalid!");
+			return false;
+		}
+		return true;
+	}
+	
 }

@@ -3,12 +3,14 @@
  */
 package csc7327.objects;
 
+import csc7327.specifications.HasInvariant;
+
 /**
  * The {@link UserInfor} class represent the information of user on the social network
  * @author luongnv89
  *
  */
-public class UserInfor {
+public class UserInfor implements HasInvariant{
 	/**
 	 * The id of user
 	 */
@@ -61,6 +63,10 @@ public class UserInfor {
 	 */
 	public Gender getGender() {
 		return gender;
+	}
+	@Override
+	public boolean invariant() {
+		return !(followerCount<0||followingCount<0);
 	}
 	
 }
