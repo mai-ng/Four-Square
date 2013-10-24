@@ -1,0 +1,17 @@
+TrainStation
+OtherGreatOutdoors
+ElectronicsStore
+HotelBar
+FlowerShop
+Furniture/HomeStore
+Bar
+Mall
+Pier
+WineBar
+CollegeSoccerField
+CoffeeShop
+AirportLounge
+ElectronicsStore
+ElectronicsStore
+Airport
+TurkishRestaurant

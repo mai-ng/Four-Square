@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package csc7327.tools;
+
+import csc7327.analysis.DataAnalyzer;
+
+/**
+ * @author luongnv89
+ *
+ */
+public class Analyzer {
+	static DataAnalyzer dataAnalyzer;
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		dataAnalyzer = new DataAnalyzer(args[0]);
+	}
+
+}

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="DataSetTest" project="CSC7327" tests="3" started="3" failures="0" errors="0" ignored="0">
-  <testsuite name="csc7327.tests.DataSetTest" time="0.146">
-    <testcase name="testToString" classname="csc7327.tests.DataSetTest" time="0.098"/>
-    <testcase name="testGetCityName" classname="csc7327.tests.DataSetTest" time="0.023"/>
-    <testcase name="testGetCheckInCollections" classname="csc7327.tests.DataSetTest" time="0.025"/>
-  </testsuite>
-</testrun>

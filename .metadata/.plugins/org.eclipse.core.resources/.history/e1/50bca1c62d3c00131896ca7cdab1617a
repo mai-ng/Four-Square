@@ -1,0 +1,17 @@
+/**
+ * 
+ */
+package csc7327.specifications;
+
+import java.util.ArrayList;
+
+import csc7327.enums.DayInWeek;
+import csc7327.objects.CheckIn;
+
+/**
+ * @author luongnv89
+ *
+ */
+public interface DataMining {
+	public ArrayList<CheckIn> getInformationByTime(int startHour,int endHour,DayInWeek[] dayInWeek);
+}

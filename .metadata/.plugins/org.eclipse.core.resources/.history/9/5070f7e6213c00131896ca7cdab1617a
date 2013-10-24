@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package louis.database;
+
+/**
+ * @author luongnv89
+ *
+ */
+public class MySQLAccesss {
+
+}

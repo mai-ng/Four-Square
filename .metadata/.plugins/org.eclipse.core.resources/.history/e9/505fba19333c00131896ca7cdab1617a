@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+package csc7327.tools;
+
+/**
+ * @author luongnv89
+ *
+ */
+public class Analyzer {
+	private final String dataURL = "data/tokyo.txt";
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

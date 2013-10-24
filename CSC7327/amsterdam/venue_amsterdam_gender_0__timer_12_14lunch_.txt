@@ -1,0 +1,13 @@
+Hospital
+GeneralTravel
+CoffeeShop
+Hotel
+Salon/Barbershop
+SoccerStadium
+ConventionCenter
+GeneralEntertainment
+MusicVenue
+MusicVenue
+River
+Airport
+Airport

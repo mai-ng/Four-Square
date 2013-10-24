@@ -1,0 +1,85 @@
+/**
+ * 
+ */
+package csc7327.tools;
+
+import java.util.ArrayList;
+
+import csc7327.analysis.DataAnalyzer;
+import csc7327.objects.CheckIn;
+
+/**
+ * @author luongnv89
+ * 
+ */
+public class Analyzer {
+	static DataAnalyzer dataAnalyzer;
+	static String dataPath = "data/tokyo.txt";
+	static int[] workingdays = { 2, 3, 4, 5, 6 };
+	static int[] normalEvening = { 2, 3, 4, 5, 1 };
+	static int[] weekenddays = { 1, 7 };
+	static int[] fullWeek = { 1, 2, 3, 4, 5, 6, 7 };
+	static int[] relaxEvening = { 6, 7 };
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		System.out.println("Data source: " + dataPath);
+		dataAnalyzer = new DataAnalyzer(dataPath);
+		analyzerByGender();
+		// Full week
+		analyzerByTimer(0, 7, fullWeek);
+
+		// Working days
+		analyzerByTimer(7, 9, workingdays);
+		analyzerByTimer(9, 12, workingdays);
+		analyzerByTimer(12, 14, workingdays);
+		analyzerByTimer(14, 18, workingdays);
+		analyzerByTimer(18, 20, workingdays);
+
+		// Activity weekend
+		analyzerByTimer(7, 12, weekenddays);
+		analyzerByTimer(12, 20, weekenddays);
+
+		// Evening
+		analyzerByTimer(20, 24, normalEvening);
+		analyzerByTimer(20, 24, relaxEvening);
+	}
+
+	/**
+	 * @param i
+	 * @param j
+	 * @param workingdays2
+	 */
+	private static void analyzerByTimer(int i, int j, int[] workingdays2) {
+		ArrayList<CheckIn> listFilteredResult = dataAnalyzer.queryData(i, j,
+				workingdays2);
+		String outputPath = dataPath.replace("data/", "").replace(".txt", "")
+				+ "_timerr_" + i + "_" + j + workingdays2.toString() + "_.txt";
+		writeToFile(listFilteredResult, outputPath);
+
+	}
+
+	/**
+	 * 
+	 */
+	private static void analyzerByGender() {
+		ArrayList<CheckIn> listFilteredResult = new ArrayList<>();
+		for (int i = -1; i < 2; i++) {
+			listFilteredResult.addAll(dataAnalyzer.queryData(i));
+			String outputPath = dataPath.replace("data/", "").replace(".txt",
+					"")
+					+ "_gender_" + i + "_.txt";
+			writeToFile(listFilteredResult, outputPath);
+		}
+	}
+
+	private static void writeToFile(ArrayList<CheckIn> listCheckin,
+			String outputPath) {
+		Tools.writeDataToFile(listCheckin, outputPath);
+		Tools.getVenueCategories(listCheckin, "venue_" + outputPath);
+		Tools.getGPScoordinates(listCheckin, "geo_" + outputPath);
+	}
+
+}

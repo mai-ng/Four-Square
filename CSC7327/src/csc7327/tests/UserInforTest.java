@@ -3,12 +3,12 @@
  */
 package csc7327.tests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import csc7327.enums.Gender;
 import csc7327.objects.UserInfor;
 
 /**
@@ -24,8 +24,8 @@ public class UserInforTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
-		user = new UserInfor("264088306", 32, 82, Gender.MALE);
-		userKO = new UserInfor("UserID", -9, 10, Gender.FEMALE);
+		user = new UserInfor("264088306", 32, 82, 1);
+		userKO = new UserInfor("UserID", -9, 10, -1);
 	}
 
 	/**
@@ -57,7 +57,7 @@ public class UserInforTest {
 	 */
 	@Test
 	public void testGetGender() {
-		assertTrue(user.getGender() == Gender.MALE);
+		assertTrue(user.getGender() == 1);
 	}
 
 	/**

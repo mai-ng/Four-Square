@@ -1,0 +1,56 @@
+/**
+ * 
+ */
+package csc7327.tests;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import csc7327.analysis.DataAnalyzer;
+import csc7327.tools.Tools;
+
+/**
+ * @author luongnv89
+ *
+ */
+public class DataAnalyzerTest {
+	
+	DataAnalyzer tokyoTest;
+	DataAnalyzer amsterdamAnalyzer;
+	String tokyoSource = "data/tokyo.txt";
+	String amsterdamData = "data/amsterdam.txt";
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@Before
+	public void setUp() throws Exception {
+		tokyoTest = new DataAnalyzer(tokyoSource);
+		amsterdamAnalyzer = new DataAnalyzer(amsterdamData);
+	}
+
+	/**
+	 * Test method for {@link csc7327.analysis.DataAnalyzer#getCityName()}.
+	 */
+	@Test
+	public void testGetCityName() {
+		assertTrue(tokyoTest.getCityName().equals("Tokyo"));
+		assertTrue(amsterdamAnalyzer.getCityName().equals("Amsterdam"));
+	}
+
+	/**
+	 * Test method for {@link csc7327.analysis.DataAnalyzer#analyzer()}.
+	 */
+	@Test
+	public void testAnalyzerTokyo() {
+		int[] days = {2,3,4,5,6};
+		Tools.writeDataToFile(tokyoTest.queryData(0, 6,days),"tokyo_afternight_workingday.txt");
+	}
+	
+	@Test
+	public void testAnalyzerAmsterdam(){
+		amsterdamAnalyzer.analyzer();
+	}
+
+}

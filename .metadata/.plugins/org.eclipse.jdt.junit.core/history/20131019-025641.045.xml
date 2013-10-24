@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="CheckInTimeTest" project="CSC7327" tests="2" started="2" failures="0" errors="0" ignored="0">
-  <testsuite name="csc7327.tests.CheckInTimeTest" time="0.115">
-    <testcase name="testInvariant" classname="csc7327.tests.CheckInTimeTest" time="0.106"/>
-    <testcase name="testGetCityTime" classname="csc7327.tests.CheckInTimeTest" time="0.009"/>
-  </testsuite>
-</testrun>

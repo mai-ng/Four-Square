@@ -3,8 +3,6 @@
  */
 package csc7327.objects;
 
-import csc7327.enums.Gender;
-
 
 /**
  * The {@link CheckIn} class present a checkin
@@ -35,9 +33,13 @@ public class CheckIn {
 	 */
 	public CheckIn(String checkInString) {
 		String[] array = checkInString.split("\t");
+		int gender = 0;
+		if (array[3].equals("male"))
+			gender = 1;
+		else if (array[3].equals("female"))
+			gender = -1;
 		user = new UserInfor(array[0], Integer.parseInt(array[1]),
-				Integer.parseInt(array[2]),
-				array[3].equals("male") ? Gender.MALE : Gender.FEMALE);
+				Integer.parseInt(array[2]),gender);
 		venue = new Venue(array[4], array[5]);
 		gpsCoordinates = new GPSCoordinate(Float.parseFloat(array[6]),
 				Float.parseFloat(array[7]));
@@ -72,15 +74,16 @@ public class CheckIn {
 		return checkInTime;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return "CheckIn: [user=" + user + ", venue=" + venue
-				+ ", gpsCoordinates=" + gpsCoordinates + ", checkInTime="
-				+ checkInTime + "]";
+		return user.toString() +"\t" + venue.toString()
+				+ "\t" + gpsCoordinates.toString() + "\t"
+				+ checkInTime.getCityTime().toString()+"\n";
 	}
-	
-	
+
 }

@@ -57,7 +57,7 @@ public class GPSCoordinate {
 	 */
 	@Override
 	public String toString() {
-		return this.latitude+" "+this.longitude;
+		return this.latitude+"\t"+this.longitude;
 	}
 
 }

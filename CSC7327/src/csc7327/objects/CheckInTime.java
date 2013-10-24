@@ -4,6 +4,7 @@
 package csc7327.objects;
 
 import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
@@ -16,6 +17,7 @@ import csc7327.specifications.HasInvariant;
  */
 public class CheckInTime implements HasInvariant{
 	private final DateTimeFormatter formatter = DateTimeFormat.forPattern("EEEE MMM dd HH:mm:ss Z yyyy");
+	
 	/**
 	 * UTC time offset
 	 */
@@ -39,7 +41,11 @@ public class CheckInTime implements HasInvariant{
 	 * @return the real time of checkin in the city
 	 */
 	private DateTime convertToCityTime(String utcTimeStampString){
-		return formatter.parseDateTime(utcTimeStampString).minusMinutes(utcTimeOffset);
+		DateTime date = formatter.parseDateTime(utcTimeStampString);
+//		System.out.println(date.toString());
+		DateTime dateChanged = date.toDateTime(DateTimeZone.forOffsetHours(utcTimeOffset/60));
+//		System.out.println("After changed: " + dateChanged.toString());
+		return dateChanged;
 	}
 	
 

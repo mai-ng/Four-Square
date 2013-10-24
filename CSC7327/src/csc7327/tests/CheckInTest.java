@@ -3,12 +3,11 @@
  */
 package csc7327.tests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import csc7327.enums.Gender;
 import csc7327.objects.CheckIn;
 import csc7327.objects.CheckInTime;
 import csc7327.objects.GPSCoordinate;
@@ -30,7 +29,7 @@ public class CheckInTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
-		user = new UserInfor("userID", 10, 120, Gender.FEMALE);
+		user = new UserInfor("userID", 10, 120, -1);
 		venue = new Venue("venueID", "Coffee shop");
 		gps = new GPSCoordinate(12.10f, -11.12f);
 		checkInTime = new CheckInTime(120, "Tue Apr 03 18:17:18 2012");

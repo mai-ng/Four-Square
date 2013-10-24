@@ -1,0 +1,32 @@
+/**
+ * 
+ */
+package csc7327.tools;
+
+import csc7327.analysis.DataAnalyzer;
+
+/**
+ * @author luongnv89
+ * 
+ */
+public class Analyzer {
+	static DataAnalyzer dataAnalyzer;
+	static String dataPath = "data/tokyo.txt";
+	static int[] workingdays = { 2, 3, 4, 5, 6 };
+	static int[] normalEvening = { 2, 3, 4, 5, 1 };
+	static int[] weekenddays = { 1, 7 };
+	static int[] fullWeek = { 1, 2, 3, 4, 5, 6, 7 };
+	static int[] relaxEvening = { 6, 7 };
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		System.out.println("Data source: " + dataPath);
+		dataAnalyzer = new DataAnalyzer(dataPath);
+		dataAnalyzer.loadData();
+		dataAnalyzer.analyzerByGender();
+		dataAnalyzer.analyzerByTime();
+	}
+
+}

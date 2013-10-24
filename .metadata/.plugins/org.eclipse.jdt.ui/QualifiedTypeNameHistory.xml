@@ -1,15 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="csc7327.objects.UserInfor"/>
-<fullyQualifiedTypeName name="csc7327.objects.Venue"/>
-<fullyQualifiedTypeName name="csc7327.objects.GPSCoordinate"/>
-<fullyQualifiedTypeName name="csc7327.objects.CheckIn"/>
-<fullyQualifiedTypeName name="csc7327.objects.CheckInTime"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="csc7327.tests.UtilitiesTest"/>
 <fullyQualifiedTypeName name="csc7327.utilities.Utilities"/>
 <fullyQualifiedTypeName name="java.util.TimeZone"/>
 <fullyQualifiedTypeName name="org.joda.time.format.DateTimeFormatter"/>
 <fullyQualifiedTypeName name="org.joda.time.format.DateTimeFormat"/>
+<fullyQualifiedTypeName name="java.lang.Float"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="csc7323.specifications.HasInvariant"/>
+<fullyQualifiedTypeName name="csc7327.objects.UserInfor"/>
+<fullyQualifiedTypeName name="csc7327.objects.Gender"/>
+<fullyQualifiedTypeName name="csc7327.objects.Venue"/>
+<fullyQualifiedTypeName name="csc7327.objects.GPSCoordinate"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="java.io.FileInputStream"/>
+<fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="csc7327.objects.DataSet"/>
+<fullyQualifiedTypeName name="csc7327.enums.TimeInDay"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="csc7327.objects.DataTimeSlot"/>
+<fullyQualifiedTypeName name="java.io.BufferedWriter"/>
+<fullyQualifiedTypeName name="java.io.FileWriter"/>
+<fullyQualifiedTypeName name="csc7327.analysis.DataAnalyzer"/>
 <fullyQualifiedTypeName name="org.joda.time.DateTime"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="org.joda.time.DateTimeZone"/>
+<fullyQualifiedTypeName name="csc7327.objects.CheckInTime"/>
+<fullyQualifiedTypeName name="csc7327.enums.DayInWeek"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="csc7327.objects.CheckIn"/>
 </qualifiedTypeNameHistroy>

@@ -43,5 +43,10 @@ public class Venue {
 		return this.venueID.equals(other.getVenueID()) && this.venueCategory.equals(other.getVenueCategory());
 	}
 	
+	@Override
+	public String toString(){
+		return venueID+"\t"+venueCategory; 
+	}
+	
 	
 }

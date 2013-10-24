@@ -1,0 +1,118 @@
+/**
+ * 
+ */
+package csc7327.tools;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+
+import csc7327.objects.CheckIn;
+
+/**
+ * @author luongnv89
+ *
+ */
+public class Tools {
+	/**
+	 * @param listResultCheckin
+	 * @param outputFilePath
+	 */
+	public static void writeDataToFile(ArrayList<CheckIn> listResultCheckin,
+			String outputFilePath) {
+		FileWriter file = null;
+		try {
+			file = new FileWriter(new File(outputFilePath), true);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		BufferedWriter write = null;
+		try {
+			write = new BufferedWriter(file);
+			for (int i = 0; i < listResultCheckin.size(); i++) {
+				write.write(listResultCheckin.get(i).toString());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				write.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+	}
+	
+	
+	/**
+	 * @param listResultCheckin
+	 * @param outputFilePath
+	 */
+	public static void getVenueCategories(ArrayList<CheckIn> listResultCheckin,
+			String outputFilePath) {
+		FileWriter file = null;
+		try {
+			file = new FileWriter(new File(outputFilePath), true);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		BufferedWriter write = null;
+		try {
+			write = new BufferedWriter(file);
+			for (int i = 0; i < listResultCheckin.size(); i++) {
+				write.write(listResultCheckin.get(i).getVenue().getVenueCategory().replaceAll(" ", ""));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				write.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+	}
+	
+	/**
+	 * @param listResultCheckin
+	 * @param outputFilePath
+	 */
+	public static void getGPScoordinates(ArrayList<CheckIn> listResultCheckin,
+			String outputFilePath) {
+		FileWriter file = null;
+		try {
+			file = new FileWriter(new File(outputFilePath), true);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		BufferedWriter write = null;
+		try {
+			write = new BufferedWriter(file);
+			for (int i = 0; i < listResultCheckin.size(); i++) {
+				write.write(listResultCheckin.get(i).getGpsCoordinates().getLatitude()+" "+listResultCheckin.get(i).getGpsCoordinates().getLongitude()+"\n");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				write.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+	}
+	
+
+
+}

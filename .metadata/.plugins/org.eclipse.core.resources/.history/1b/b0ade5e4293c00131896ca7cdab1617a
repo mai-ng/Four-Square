@@ -1,0 +1,89 @@
+/**
+ * 
+ */
+package csc7327.objects;
+
+import csc7327.enums.Gender;
+
+
+/**
+ * The {@link CheckIn} class present a checkin
+ * 
+ * @author luongnv89
+ * 
+ */
+public class CheckIn {
+	/**
+	 * User of checkin
+	 */
+	UserInfor user;
+	/**
+	 * The venue of checkin
+	 */
+	Venue venue;
+	/**
+	 * The gps coordinates of checkin
+	 */
+	GPSCoordinate gpsCoordinates;
+	/**
+	 * The time of checkin
+	 */
+	CheckInTime checkInTime;
+
+	/**
+	 * Constructor a checkin by input string
+	 */
+	public CheckIn(String checkInString) {
+		String[] array = checkInString.split("\t");
+		Gender gender = Gender.NONE;
+		if(array[3].equals("male")) gender = Gender.MALE;
+		else if(array[3].equals("female")) gender = Gender.FEMALE;)
+		user = new UserInfor(array[0], Integer.parseInt(array[1]),
+				Integer.parseInt(array[2]),
+				array[3].equals("male") ? Gender.MALE : Gender.FEMALE);
+		venue = new Venue(array[4], array[5]);
+		gpsCoordinates = new GPSCoordinate(Float.parseFloat(array[6]),
+				Float.parseFloat(array[7]));
+		checkInTime = new CheckInTime(Integer.parseInt(array[8]), array[9]);
+	}
+
+	/**
+	 * @return the user
+	 */
+	public UserInfor getUser() {
+		return user;
+	}
+
+	/**
+	 * @return the venue
+	 */
+	public Venue getVenue() {
+		return venue;
+	}
+
+	/**
+	 * @return the gpsCoordinates
+	 */
+	public GPSCoordinate getGpsCoordinates() {
+		return gpsCoordinates;
+	}
+
+	/**
+	 * @return the checkInTime
+	 */
+	public CheckInTime getCheckInTime() {
+		return checkInTime;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "CheckIn: [user=" + user + ", venue=" + venue
+				+ ", gpsCoordinates=" + gpsCoordinates + ", checkInTime="
+				+ checkInTime + "]";
+	}
+	
+	
+}

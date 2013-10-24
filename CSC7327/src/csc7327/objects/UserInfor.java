@@ -3,7 +3,6 @@
  */
 package csc7327.objects;
 
-import csc7327.enums.Gender;
 import csc7327.specifications.HasInvariant;
 
 /**
@@ -27,7 +26,7 @@ public class UserInfor implements HasInvariant{
 	/**
 	 * The gender of user: MALE or FEMALE
 	 */
-	Gender gender;
+	int gender;
 	/**
 	 * @param userID
 	 * @param followingCount
@@ -35,7 +34,7 @@ public class UserInfor implements HasInvariant{
 	 * @param gender
 	 */
 	public UserInfor(String userID, int followingCount, int followerCount,
-			Gender gender) {
+			int gender) {
 		this.userID = userID;
 		this.followingCount = followingCount;
 		this.followerCount = followerCount;
@@ -62,7 +61,7 @@ public class UserInfor implements HasInvariant{
 	/**
 	 * @return the gender
 	 */
-	public Gender getGender() {
+	public int getGender() {
 		return gender;
 	}
 	@Override
@@ -70,4 +69,8 @@ public class UserInfor implements HasInvariant{
 		return !(followerCount<0||followingCount<0);
 	}
 	
+	@Override
+	public String toString(){
+		return userID+"\t"+followingCount+"\t"+followerCount+"\t"+gender; 
+	}
 }

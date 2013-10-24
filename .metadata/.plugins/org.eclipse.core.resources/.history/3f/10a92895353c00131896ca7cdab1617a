@@ -1,0 +1,36 @@
+/**
+ * 
+ */
+package csc7327.tools;
+
+import java.util.ArrayList;
+
+import csc7327.analysis.DataAnalyzer;
+import csc7327.objects.CheckIn;
+
+/**
+ * @author luongnv89
+ * 
+ */
+public class Analyzer {
+	static DataAnalyzer dataAnalyzer;
+	static String dataPath = "data/tokyo.txt";
+	static ArrayList<CheckIn> listFilteredResult = new ArrayList<>();
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		System.out.println("Data source: " + dataPath);
+		dataAnalyzer = new DataAnalyzer(dataPath);
+		
+		for (int i = -1; i < 2; i++) {
+			listFilteredResult.addAll(dataAnalyzer.queryData(i));
+			String outputPath = dataPath.replace("data/", "").replace(".txt",
+					"")
+					+ "_gender_" + i + "_.txt";
+			Tools.writeDataToFile(listFilteredResult, outputPath);
+		}
+	}
+
+}

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="CheckInTest" project="CSC7327" tests="4" started="4" failures="0" errors="0" ignored="0">
-  <testsuite name="csc7327.tests.CheckInTest" time="0.081">
-    <testcase name="testGetVenue" classname="csc7327.tests.CheckInTest" time="0.07"/>
-    <testcase name="testGetCheckInTime" classname="csc7327.tests.CheckInTest" time="0.01"/>
-    <testcase name="testGetUser" classname="csc7327.tests.CheckInTest" time="0.0"/>
-    <testcase name="testGetGpsCoordinates" classname="csc7327.tests.CheckInTest" time="0.001"/>
-  </testsuite>
-</testrun>
