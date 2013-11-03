@@ -1,0 +1,3 @@
+tokyo_gender_-1_.txt	11496	1655
+tokyo_gender_0_.txt	8073	796
+tokyo_gender_1_.txt	84111	9470

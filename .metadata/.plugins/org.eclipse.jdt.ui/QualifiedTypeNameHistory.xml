@@ -9,7 +9,6 @@
 <fullyQualifiedTypeName name="java.lang.Float"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="csc7323.specifications.HasInvariant"/>
-<fullyQualifiedTypeName name="csc7327.objects.UserInfor"/>
 <fullyQualifiedTypeName name="csc7327.objects.Gender"/>
 <fullyQualifiedTypeName name="csc7327.objects.Venue"/>
 <fullyQualifiedTypeName name="csc7327.objects.GPSCoordinate"/>
@@ -22,13 +21,25 @@
 <fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="csc7327.objects.DataTimeSlot"/>
 <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
-<fullyQualifiedTypeName name="java.io.FileWriter"/>
-<fullyQualifiedTypeName name="csc7327.analysis.DataAnalyzer"/>
 <fullyQualifiedTypeName name="org.joda.time.DateTime"/>
-<fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="org.joda.time.DateTimeZone"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="com.mysql.jdbc.Statement"/>
+<fullyQualifiedTypeName name="com.mysql.jdbc.PreparedStatement"/>
+<fullyQualifiedTypeName name="com.mysql.jdbc.Connection"/>
+<fullyQualifiedTypeName name="java.sql.Statement"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="louis.database.MySQLAccess"/>
+<fullyQualifiedTypeName name="csc7327.enums.Gender"/>
 <fullyQualifiedTypeName name="csc7327.objects.CheckInTime"/>
 <fullyQualifiedTypeName name="csc7327.enums.DayInWeek"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.io.FileReader"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="csc7327.tools.Tools"/>
 <fullyQualifiedTypeName name="csc7327.objects.CheckIn"/>
+<fullyQualifiedTypeName name="java.io.FileWriter"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="csc7327.analysis.DataAnalyzer"/>
+<fullyQualifiedTypeName name="csc7327.objects.UserInfor"/>
 </qualifiedTypeNameHistroy>

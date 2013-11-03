@@ -1,0 +1,141 @@
+/**
+ * 
+ */
+package csc7327.analysis;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
+import org.joda.time.DateTime;
+
+import csc7327.objects.CheckIn;
+
+/**
+ * @author luongnv89
+ * 
+ */
+public class DataAnalyzer {
+	/**
+	 * The url to get the data source file
+	 */
+	String dataURL;
+	/**
+	 * List all the checkins of the city divided by time slot
+	 */
+	// ArrayList<DataTimeSlot> listDataTimeSlot;
+	ArrayList<CheckIn> listAllCheckin;
+
+	/**
+	 * @param cityName
+	 * @param dataURL
+	 */
+	public DataAnalyzer(String dataURL) {
+		this.dataURL = dataURL;
+		this.listAllCheckin = new ArrayList<>();
+		loadData();
+	}
+
+	/**
+	 * @param dataURL2
+	 * @return
+	 */
+	private void loadData() {
+
+		try {
+			InputStream inputs = new FileInputStream(dataURL);
+			InputStreamReader inputReader = new InputStreamReader(inputs);
+			@SuppressWarnings("resource")
+			BufferedReader br = new BufferedReader(inputReader);
+			String checkInString = br.readLine();
+			while (checkInString != null) {
+				listAllCheckin.add(new CheckIn(checkInString));
+				checkInString = br.readLine();
+			}
+		} catch (Exception e) {
+			System.out.println("Some thing wrong!\n");
+			e.printStackTrace();
+		}
+
+	}
+
+	/**
+	 * @param listAllCheckin
+	 *            the listAllCheckin to set
+	 */
+	public void setListAllCheckin(ArrayList<CheckIn> listAllCheckin) {
+		this.listAllCheckin = listAllCheckin;
+	}
+
+	public ArrayList<CheckIn> getListAllCheckin() {
+		return listAllCheckin;
+	}
+
+	// QUERY FILTER DATA
+	/**
+	 * Filter data by time
+	 * 
+	 * @param startHour
+	 * @param endHour
+	 * @param dayInWeek
+	 * @return
+	 */
+	public ArrayList<CheckIn> queryData(int startHour, int endHour,
+			int[] dayInWeek) {
+		ArrayList<CheckIn> listResultCheckin = new ArrayList<>();
+		for (int i = 0; i < listAllCheckin.size(); i++) {
+			DateTime checkInTime = listAllCheckin.get(i).getCheckInTime()
+					.getCityTime();
+			if (checkInTime.getHourOfDay() > startHour
+					&& checkInTime.getHourOfDay() < endHour
+					&& dayInWeek(dayInWeek, checkInTime.getDayOfWeek())) {
+				listResultCheckin.add(listAllCheckin.get(i));
+			}
+		}
+		return listResultCheckin;
+	}
+
+	public ArrayList<CheckIn> queryData(int startHour, int endHour, int day) {
+		ArrayList<CheckIn> listResultCheckin = new ArrayList<>();
+		for (int i = 0; i < listAllCheckin.size(); i++) {
+			DateTime checkInTime = listAllCheckin.get(i).getCheckInTime()
+					.getCityTime();
+			if (checkInTime.getHourOfDay() > startHour
+					&& checkInTime.getHourOfDay() < endHour
+					&& day == checkInTime.getDayOfWeek()) {
+				listResultCheckin.add(listAllCheckin.get(i));
+			}
+		}
+		return listResultCheckin;
+	}
+
+	/**
+	 * Filter data by gender
+	 * 
+	 * @param gender
+	 * @return
+	 */
+	public ArrayList<CheckIn> queryData(int gender) {
+		ArrayList<CheckIn> listResultCheckin = new ArrayList<>();
+		for (int i = 0; i < listAllCheckin.size(); i++) {
+			if (listAllCheckin.get(i).getUser().getGender() == gender) {
+				listResultCheckin.add(listAllCheckin.get(i));
+			}
+		}
+		return listResultCheckin;
+	}
+
+	/**
+	 * @param dayInWeek
+	 * @return
+	 */
+	private boolean dayInWeek(int[] daysInWeek, int day) {
+		for (int i = 0; i < daysInWeek.length; i++) {
+			if (daysInWeek[i] == day)
+				return true;
+		}
+		return false;
+	}
+}

@@ -11,7 +11,7 @@ import csc7327.analysis.DataAnalyzer;
  */
 public class Analyzer {
 	static DataAnalyzer dataAnalyzer;
-	static String dataPath = "data/amsterdam.txt";
+	static String dataPath = "data/tokyo.txt";
 	
 
 	/**
@@ -22,10 +22,12 @@ public class Analyzer {
 		dataAnalyzer = new DataAnalyzer(dataPath);
 		System.out.println("Load data...");
 		dataAnalyzer.loadData();
+//		dataAnalyzer.analyzerByFollow();
+//		dataAnalyzer.loadData("Train Station");
 		System.out.println("Analyzer data by gender...");
 		dataAnalyzer.analyzerByGender();
-		System.out.println("Analyzer data by time....");
-		dataAnalyzer.analyzerByTime();
+//		System.out.println("Analyzer data by time....");
+//		dataAnalyzer.analyzerByTime();
 		System.out.println("Done!");
 	}
 

@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import org.joda.time.DateTime;
 
 import csc7327.objects.CheckIn;
+import csc7327.objects.UserInfor;
 import csc7327.tools.Tools;
 
 /**
@@ -20,10 +21,8 @@ import csc7327.tools.Tools;
  */
 public class DataAnalyzer {
 	static int[] workingdays = { 2, 3, 4, 5, 6 };
-	static int[] normalEvening = { 2, 3, 4, 5, 1 };
-	static int[] weekenddays = { 1, 7 };
-	static int[] fullWeek = { 1, 2, 3, 4, 5, 6, 7 };
-	static int[] relaxEvening = { 6, 7 };
+	static int[] saturday = {7 };
+	static int[] sunday = { 1};
 	/**
 	 * The url to get the data source file
 	 */
@@ -62,7 +61,30 @@ public class DataAnalyzer {
 			System.out.println("Some thing wrong!\n");
 			e.printStackTrace();
 		}
-		
+
+	}
+
+	public void loadData(String dominateVenue) {
+		try {
+			InputStream inputs = new FileInputStream(dataURL);
+			InputStreamReader inputReader = new InputStreamReader(inputs);
+			@SuppressWarnings("resource")
+			BufferedReader br = new BufferedReader(inputReader);
+			String checkInString = br.readLine();
+			while (checkInString != null) {
+				if (!checkInString.toLowerCase().contains(dominateVenue.toLowerCase())) {
+					listAllCheckin.add(new CheckIn(checkInString));
+				}
+//				else{
+//					System.out.println("Hello1");
+//				}
+				checkInString = br.readLine();
+
+			}
+		} catch (Exception e) {
+			System.out.println("Some thing wrong!\n");
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -101,7 +123,6 @@ public class DataAnalyzer {
 		return listResultCheckin;
 	}
 
-
 	/**
 	 * Filter data by gender
 	 * 
@@ -129,28 +150,34 @@ public class DataAnalyzer {
 		}
 		return false;
 	}
-	
+
 	/**
 	 * 
 	 */
 	public void analyzerByTime() {
-		// Full week
-		analyzerByTimer(0, 7, fullWeek,"sleeping");
-
-		// Working days
-		analyzerByTimer(7, 9, workingdays,"goToWork");
-		analyzerByTimer(9, 12, workingdays,"WorkingMorning");
-		analyzerByTimer(12, 14, workingdays,"lunch");
-		analyzerByTimer(14, 18, workingdays,"workingAfternoon");
-		analyzerByTimer(18, 20, workingdays,"GoHome");
+		// Weekdays
+		analyzerByTimer(0, 8, workingdays, "afternight");
+		analyzerByTimer(8, 12, workingdays, "morning");
+		analyzerByTimer(12, 18, workingdays, "afternoon");
+		analyzerByTimer(18, 24, workingdays, "night");
 
 		// Activity weekend
-		analyzerByTimer(7, 12, weekenddays,"weekendMorning");
-		analyzerByTimer(12, 20, weekenddays,"weekendAfternoon");
+		analyzerByTimer(0, 8, saturday, "saturday_afternight");
+		analyzerByTimer(8, 12, saturday, "saturday_morning");
+		analyzerByTimer(12, 18, saturday, "saturday_afternoon");
+		analyzerByTimer(18, 24, saturday, "saturday_night");
+		
+		// Activity weekend
+				analyzerByTimer(0, 8, sunday, "sunday_afternight");
+				analyzerByTimer(8, 12, sunday, "sunday_morning");
+				analyzerByTimer(12, 18, sunday, "sunday_afternoon");
+				analyzerByTimer(18, 24, sunday, "sunday_night");
+		
 
-		// Evening
-		analyzerByTimer(20, 24, normalEvening,"normalEvening");
-		analyzerByTimer(20, 24, relaxEvening,"relaxEvening");
+
+//		// Evening
+//		analyzerByTimer(20, 24, normalEvening, "normalEvening");
+//		analyzerByTimer(20, 24, relaxEvening, "relaxEvening");
 
 	}
 
@@ -159,10 +186,10 @@ public class DataAnalyzer {
 	 * @param j
 	 * @param days
 	 */
-	private void analyzerByTimer(int i, int j, int[] days,String labelTime) {
-		ArrayList<CheckIn> listFilteredResult = this.queryData(i, j,
-				days);
-		String outputPath = this.dataURL.replace("data/", "").replace(".txt", "")
+	private void analyzerByTimer(int i, int j, int[] days, String labelTime) {
+		ArrayList<CheckIn> listFilteredResult = this.queryData(i, j, days);
+		String outputPath = this.dataURL.replace("data/", "").replace(".txt",
+				"")
 				+ "_timer_" + i + "_" + j + labelTime + "_.txt";
 		Tools.writeToFile(listFilteredResult, outputPath);
 
@@ -175,14 +202,42 @@ public class DataAnalyzer {
 		for (int i = -1; i < 2; i++) {
 			ArrayList<CheckIn> listFilteredResult = new ArrayList<>();
 			listFilteredResult.addAll(this.queryData(i));
-			String outputPath = this.dataURL.replace("data/", "").replace(".txt",
-					"")
+			String outputPath = this.dataURL.replace("data/", "").replace(
+					".txt", "")
 					+ "_gender_" + i + "_.txt";
 			Tools.writeToFile(listFilteredResult, outputPath);
-			DataAnalyzer genderAnalyzer = new DataAnalyzer(outputPath);
-			genderAnalyzer.setListAllCheckin(listFilteredResult);
-			genderAnalyzer.analyzerByTime();
+//			DataAnalyzer genderAnalyzer = new DataAnalyzer(outputPath);
+//			genderAnalyzer.setListAllCheckin(listFilteredResult);
+//			genderAnalyzer.analyzerByTime();
 		}
+	}
+	
+	public void analyzerByFollow(){
+		int nbMale = 0;
+		int nbMaleFollowee = 0;
+		int nbMaleFollower=0;
+		
+		int nbFemale = 0;
+		int nbFemaleFollowee = 0;
+		int nbFemaleFollwer = 0;
+		
+		for(int i=0;i<listAllCheckin.size();i++){
+			UserInfor user = listAllCheckin.get(i).getUser();
+			if(user.getGender()==-1){
+				nbFemale++;
+				nbFemaleFollowee+=user.getFollowingCount();
+				nbFemaleFollwer+=user.getFollowerCount();
+			}
+			else if(user.getGender()==1){
+				nbMale++;
+				nbMaleFollowee+=user.getFollowingCount();
+				nbMaleFollower+=user.getFollowerCount();
+			}
+		}
+		
+		System.out.println("Data source: " + this.dataURL);
+		System.out.println("Male: \t" + nbMale+"\t"+nbMaleFollowee+"\t"+nbMaleFollower+"\n");
+		System.out.println("Female: \t" + nbFemale+"\t"+nbFemaleFollowee+"\t"+nbFemaleFollwer+"\n");
 	}
 
 }

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="VenueTest" project="CSC7327" tests="2" started="2" failures="0" errors="0" ignored="0">
-  <testsuite name="csc7327.tests.VenueTest" time="0.001">
-    <testcase name="testGetVenueCategory" classname="csc7327.tests.VenueTest" time="0.001"/>
-    <testcase name="testGetVenueID" classname="csc7327.tests.VenueTest" time="0.0"/>
-  </testsuite>
-</testrun>

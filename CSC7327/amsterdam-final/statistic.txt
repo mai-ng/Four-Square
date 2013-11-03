@@ -1,0 +1,12 @@
+amsterdam_timer_0_8afternight_.txt	600	312
+amsterdam_timer_8_12morning_.txt	1348	810
+amsterdam_timer_12_18afternoon_.txt	2533	1315
+amsterdam_timer_18_24night_.txt	1632	969
+amsterdam_timer_0_8saturday_afternight_.txt	159	105
+amsterdam_timer_8_12saturday_morning_.txt	252	189
+amsterdam_timer_12_18saturday_afternoon_.txt	754	512
+amsterdam_timer_18_24saturday_night_.txt	292	224
+amsterdam_timer_0_8sunday_afternight_.txt	84	65
+amsterdam_timer_8_12sunday_morning_.txt	144	121
+amsterdam_timer_12_18sunday_afternoon_.txt	374	275
+amsterdam_timer_18_24sunday_night_.txt	198	157

@@ -1,0 +1,32 @@
+/**
+ * 
+ */
+package csc7327.tools;
+
+import csc7327.analysis.DataAnalyzer;
+
+/**
+ * @author luongnv89
+ * 
+ */
+public class Analyzer {
+	static DataAnalyzer dataAnalyzer;
+	static String dataPath = "data/amsterdam.txt";
+	
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		System.out.println("Data source: " + dataPath);
+		dataAnalyzer = new DataAnalyzer(dataPath);
+		System.out.println("Load data...");
+		dataAnalyzer.loadData("TrainStation");
+		System.out.println("Analyzer data by gender...");
+		dataAnalyzer.analyzerByGender();
+		System.out.println("Analyzer data by time....");
+		dataAnalyzer.analyzerByTime();
+		System.out.println("Done!");
+	}
+
+}
