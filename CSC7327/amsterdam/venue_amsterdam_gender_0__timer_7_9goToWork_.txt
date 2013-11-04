@@ -1,5 +1,0 @@
-Hospital
-AirportLounge
-CoworkingSpace
-AirportTerminal
-ElectronicsStore
