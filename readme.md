@@ -1,3 +1,5 @@
+A Data Analysis project
+----
 The object of the project is to study the behavior of Twitter user in two city Amsterdam and Tokyo. And from that we can have some conclusion about the social life in those two city.
 The input is the set of FourSquare data which contains the information about the user tweet (on Twitter) such as: tweet location, tweet time in text format.
 With the input data, I have to process the data, extract the useful information, analysis and visualize the information to reveal the pattern of user behavior in 2 cities.
